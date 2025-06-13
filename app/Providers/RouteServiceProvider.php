@@ -18,8 +18,9 @@ class RouteServiceProvider extends ServiceProvider
 
     Route::middleware('api')
         ->prefix('api')
-        ->group(base_path('routes/api.php')); // ✅ This line is crucial
+        ->group(base_path('routes/api.php')); // Loads all routes from routes/api.php
 }
+
 
     protected function configureRateLimiting(): void
     {

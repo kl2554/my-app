@@ -1,13 +1,26 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
+
 use Illuminate\Http\Request;
+
+use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\StudentController;
 
-Route::get('student', [StudentController::class, 'index'])->name('student.index');
-Route::post('student', [StudentController::class, 'store'])->name('student.store');
-Route::put('student/{id}', [StudentController::class, 'update'])->name('student.update');
-Route::get('student/{student}', [StudentController::class, 'show'])->name('student.show');
-Route::delete('student/{student}', [StudentController::class, 'destroy'])->name('student.destroy');
+// Get all students (GET)
+Route::get('/students', [StudentController::class, 'index']);
+
+// Create a new student (POST)
+Route::post('/students', [StudentController::class, 'store']);
+
+// Update a student (PUT)
+Route::put('/students/{id}', [StudentController::class, 'update']);
+
+// Delete a student (DELETE)
+Route::delete('/students/{id}', [StudentController::class, 'destroy']);
+
+
+Route::get('/test-api-route', [StudentController::class, 'index']);
+
+
 
 

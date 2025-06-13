@@ -1,7 +1,7 @@
 <?php
 
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\API;
 
 
 
@@ -10,6 +10,44 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Student;  // Import Student model
+
+
+
+class StudentController extends Controller
+{
+    // GET /students
+    public function index()
+    {
+        return response()->json(['message' => 'GET all students']);
+    }
+
+    // POST /students
+    public function store(Request $request)
+    {
+        return response()->json([
+            'message' => 'Student created',
+            'data' => $request->all()
+        ]);
+    }
+
+    // PUT /students/{id}
+    public function update(Request $request, $id)
+    {
+        return response()->json([
+            'message' => "Student with ID $id updated",
+            'data' => $request->all()
+        ]);
+    }
+
+    // DELETE /students/{id}
+    public function destroy($id)
+    {
+        return response()->json([
+            'message' => "Student with ID $id deleted"
+        ]);
+    }
+}
+
 
 class StudentController extends Controller
 {
