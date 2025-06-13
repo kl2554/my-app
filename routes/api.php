@@ -20,6 +20,7 @@ Route::delete('/students/{id}', [StudentController::class, 'destroy']);
 
 
 Route::get('/test-api-route', [StudentController::class, 'index']);
+Route::apiResource('students', StudentController::class);
 
 
 
